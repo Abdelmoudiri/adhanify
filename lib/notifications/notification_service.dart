@@ -32,7 +32,7 @@ static Future<void> scheduleNotification(String title, String body, DateTime dat
           priority: Priority.high,
         ),
       ),
-      androidAllowWhileIdle: true,
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
     );
