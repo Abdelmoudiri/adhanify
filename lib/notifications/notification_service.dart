@@ -9,7 +9,11 @@ class NotificationService {
 
   static Future<void> init() async {
     const android = AndroidInitializationSettings('@mipmap/ic_launcher');
-    const settings = InitializationSettings(android: android);
+    const linux = LinuxInitializationSettings(defaultActionName: 'Open notification');
+    const settings = InitializationSettings(
+      android: android,
+      linux: linux,
+    );
     await _notifications.initialize(settings);
     tz.initializeTimeZones();
   }
